@@ -90,7 +90,12 @@ def _charts(payloads: dict, res: dict) -> dict:
 def _fmt(x, nd: int = 2) -> str:
     if x is None:
         return "n/a"
-    if isinstance(x, float):
+    if isinstance(x, str):
+        try:
+            x = float(x)
+        except ValueError:
+            return x
+    if isinstance(x, (int, float)):
         return f"{x:,.{nd}f}"
     return str(x)
 
