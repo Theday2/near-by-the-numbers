@@ -1,0 +1,6 @@
+data/
+out/
+out-demo/
+__pycache__/
+*.pyc
+.venv/
